@@ -67,7 +67,7 @@ def send_deauth_packets(iface, addr):
     except Exception as e:
         logging.error(f"Failed to send deauth packets to {addr}: {e}")
 
-def handle_```python
+# Removed the incorrect line
 def handle_signal(sig, frame):
     logging.info("Shutting down gracefully...")
     sys.exit(0)
@@ -106,3 +106,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
