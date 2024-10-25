@@ -12,12 +12,12 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Red banner with tool name and version
 def print_banner():
     print("\033[91m" + """
-     ____  ____  ____  _  __      ____  ____  _  __
-    |  _ \|  _ \|  _ \| |/ /     |  _ \|  _ \| |/ /
-    | |_) | |_) | |_) | ' /      | |_) | |_) | ' /
-    |  __/|  _ <|  _ <| . \      |  __/|  _ <| . \
-    |_|   |_| \_\_| \_\_|\_\     |_|   |_| \_\_|\_\
-
+    
+▗▄▄▖  ▗▄▖ ▗▄▄▖ ▗▖ ▗▖
+▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌▐▌▗▞▘
+▐▛▀▘ ▐▛▀▜▌▐▛▀▚▖▐▛▚▖ 
+▐▌   ▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌
+            
     NETWIJAM - Network and Wi-Fi Jammer
     Version: 1.1
     """ + "\033[0m")
