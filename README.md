@@ -99,9 +99,6 @@ Here’s a brief overview of the script:
 - **Configure Logging**:
   Logging is configured to provide detailed information and error messages.
 
-- **Print Banner**:
-  A banner is printed to indicate the tool's name and version.
-
 - **Set Monitor Mode**:
   The script sets the specified Wi-Fi interface to monitor mode using `ifconfig` and `iwconfig`.
 
