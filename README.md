@@ -1,8 +1,7 @@
 ![Picsart_24-10-25_23-38-34-949](https://github.com/user-attachments/assets/97ca35b0-7b1e-4444-b2c7-177bcac2f587)
 
-*tutorial on how to install and use the NETWIJAM network and Wi-Fi jammer tool. This tutorial assumes you have basic knowledge of Python and the command line.
+*tutorial on how to install and use the NETWIJAM network and Wi-Fi jammer tool. 
 
----
 
 # NETWIJAM: Network and Wi-Fi Jammer Tool Tutorial
 
